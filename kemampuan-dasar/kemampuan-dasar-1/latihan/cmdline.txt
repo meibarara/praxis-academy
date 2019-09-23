@@ -1,0 +1,165 @@
+C:\Users\D>cd C:\D
+C:\D>
+
+c:\D>color 84
+
+c:\D>date /t
+19/09/2019
+
+c:\D>regedit
+
+c:\D>chkntfs c:
+The type of the file system is NTFS.
+C: is not dirty.
+
+C:\D>systeminfo
+Host Name:                 DESKTOP-E67N61F
+OS Name:                   Microsoft Windows 10 Pro
+OS Version:                10.0.17134 N/A Build 17134
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          Windows User
+Registered Organization:
+Product ID:                00330-80000-00000-AA426
+Original Install Date:     13/07/2018, 10:32:49
+System Boot Time:          18/09/2019, 21:31:46
+System Manufacturer:       ASUSTeK COMPUTER INC.
+System Model:              K46CB
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: Intel64 Family 6 Model 58 Stepping 9 GenuineIntel ~1800 Mhz
+BIOS Version:              American Megatrends Inc. K46CB.207, 17/05/2013
+Windows Directory:         C:\WINDOWS
+System Directory:          C:\WINDOWS\system32
+Boot Device:               \Device\HarddiskVolume1
+System Locale:             en-us;English (United States)
+Input Locale:              en-us;English (United States)
+Time Zone:                 (UTC+07:00) Bangkok, Hanoi, Jakarta
+Total Physical Memory:     7.884 MB
+Available Physical Memory: 4.092 MB
+Virtual Memory: Max Size:  9.100 MB
+Virtual Memory: Available: 4.463 MB
+Virtual Memory: In Use:    4.637 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              \\DESKTOP-E67N61F
+Network Card(s):           4 NIC(s) Installed.
+                           [01]: VirtualBox Host-Only Ethernet Adapter
+                                 Connection Name: VirtualBox Host-Only Network
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 192.168.56.1
+                                 [02]: fe80::f42a:95ba:663e:4054
+                           [02]: Qualcomm Atheros AR9485WB-EG Wireless Network Adapter
+                                 Connection Name: Wi-Fi
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.100.1
+                                 IP address(es)
+                                 [01]: 192.168.100.20
+                                 [02]: fe80::b193:f479:9946:b299
+                           [03]: Realtek PCIe GbE Family Controller
+                                 Connection Name: Ethernet
+                                 Status:          Media disconnected
+                           [04]: Microsoft Wi-Fi Direct Virtual Adapter
+                                 Connection Name: Local Area Connection* 15
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 192.168.137.1
+                                 [02]: fe80::5937:e759:d3dc:6bb7
+Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
+                           Virtualization Enabled In Firmware: Yes
+                           Second Level Address Translation: Yes
+                           Data Execution Prevention Available: Yes
+
+
+c:\D>ipconfig /all
+Windows IP Configuration
+   Host Name . . . . . . . . . . . . : DESKTOP-E67N61F
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+Ethernet adapter Ethernet:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Realtek PCIe GbE Family Controller
+   Physical Address. . . . . . . . . : BC-EE-7B-51-C6-4F
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+c:\D>driverquery
+Module Name  Display Name           Driver Type   Link Date
+============ ====================== ============= ======================
+1394ohci     1394 OHCI Compliant Ho Kernel
+3ware        3ware                  Kernel        19/05/2015 05:28:03
+ACPI         Microsoft ACPI Driver  Kernel
+AcpiDev      ACPI Devices driver    Kernel
+acpiex       Microsoft ACPIEx Drive Kernel
+acpipagr     ACPI Processor Aggrega Kernel
+AcpiPmi      ACPI Power Meter Drive Kernel
+acpitime     ACPI Wake Alarm Driver Kernel
+ADP80XX      ADP80XX                Kernel        10/04/2015 03:49:48
+
+
+C:\D>tasklist
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+System Idle Process              0 Services                   0          8 K
+System                           4 Services                   0        140 K
+Registry                        96 Services                   0     15.000 K
+AutoHotkey.exe                5592 Console                    2      7.368 K
+
+C:\D>taskkill /f /pid 5592
+SUCCESS: The process with PID 5592 has been terminated.
+
+C:\D> ping www.google.com
+Pinging forcesafesearch.google.com [216.239.38.120] with 32 bytes of data:
+Reply from 216.239.38.120: bytes=32 time=25ms TTL=54
+Reply from 216.239.38.120: bytes=32 time=26ms TTL=54
+Reply from 216.239.38.120: bytes=32 time=25ms TTL=54
+Reply from 216.239.38.120: bytes=32 time=24ms TTL=54
+Ping statistics for 216.239.38.120:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 24ms, Maximum = 26ms, Average = 25ms
+
+C:\D>netstat
+Active Connections
+  Proto  Local Address          Foreign Address        State
+  TCP    127.0.0.1:5354         dlied1:49668           ESTABLISHED
+  TCP    127.0.0.1:5354         dlied1:49669           ESTABLISHED
+  TCP    127.0.0.1:49668        dlied1:5354            ESTABLISHED
+  TCP    127.0.0.1:49669        dlied1:5354            ESTABLISHED
+  TCP    192.168.100.20:49898   40.119.211.203:https   ESTABLISHED
+
+C:\D>netsh
+netsh>WLAN set hostednetwork mode=allow ssid=SSIDNM key=iopjklbnm
+The hosted network mode has been set to allow.
+The SSID of the hosted network has been successfully changed.
+The user key passphrase of the hosted network has been successfully changed.
+netsh>wlan start hostednetwork
+The hosted network started.
+netsh>wlan stop hostednetwork
+The hosted network stopped.
+
+C:\D>md folderbr
+
+C:\D>dir > teks.txt
+
+C:\D>if exist teks.txt echo file ada
+file ada
+
+C:\D>echo ini teks. > teks.txt
+
+C:\D>type teks.txt
+ini teks.
+
+C:\D>where /r c:\ teks.txt
+c:\D\teks.txt
+c:\Users\D\Desktop\folder\teks.txt
+
+C:\D>del teks.txt
+
+
