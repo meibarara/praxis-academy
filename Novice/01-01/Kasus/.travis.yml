@@ -1,0 +1,40 @@
+language: dart
+
+# Gives more resources on Travis (8GB Ram, 2CPUs).
+# Do not remove without verifying w/ Travis.
+sudo: required
+
+dart:
+  # Make sure this Dart SDK version is no higher than the stable Flutter Dart
+  # SDK version to prevent errors when using Stagehand from inside VSCode's
+  # Dart and Flutter plugins. For more detail, please see:
+  # https://github.com/dart-lang/stagehand/issues/617
+  - 2.5.0
+  - dev
+
+cache:
+  directories:
+  - $HOME/.pub-cache
+  - templates/console-full/.dart_tool
+  - templates/package-simple/.dart_tool
+  - templates/web-angular/.dart_tool
+  - templates/web-simple/.dart_tool
+  - templates/web-stagexl/.dart_tool
+
+addons:
+  chrome: stable
+
+env: # important: w/o this top-level env, no job will be allowed to fail.
+  global:
+    - DISPLAY=:99.0
+  matrix:
+    - CI_TASK=tool/travis.sh
+    - CI_TASK=tool/version-check.sh
+    - CI_TASK=tool/build-check.sh
+    - CI_TASK=tool/web-angular-test.sh
+
+script: $CI_TASK
+
+# Only building on selected branches means that we don't run two builds for each pull request.
+branches:
+  only: [master]
